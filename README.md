@@ -17,7 +17,7 @@ A FiveM resource that allows players to change vehicle muffler/engine sounds wit
 
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [oxmysql](https://github.com/overextended/oxmysql)
-- [community_bridge](https://github.com/blamefilo/community_bridge) - Framework bridge for Qbox/QBCore
+- [community_bridge](https://github.com/TheOrderFivem/community_bridge)
 - [ox_target](https://github.com/overextended/ox_target)
 
 ## Installation
@@ -118,6 +118,4 @@ Check your server's vehicle audio files or sound banks for available options.
 
 ## License
 
-This resource is open-source and not escrowed. All files are fully accessible and modifiable.
-
-Please refer to the repository for the specific license terms.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
