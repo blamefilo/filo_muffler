@@ -1,15 +1,15 @@
 local vehicles = {}
 
-local function CleanTable(obj)
+local function cleanTable(obj)
     if type(obj) ~= 'table' then return obj end
     local res = {}
     for k, v in pairs(obj) do
-        res[CleanTable(k)] = CleanTable(v)
+        res[cleanTable(k)] = cleanTable(v)
     end
     return res
 end
 
-local function LoadBIN(file)
+local function loadBIN(file)
     local binaryData = LoadResourceFile(cache.resource, file, -1)
     if not binaryData or binaryData == "" then return {} end
 
@@ -21,9 +21,9 @@ local function LoadBIN(file)
     return myData or {}
 end
 
-local function SaveBIN(file, data)
-    local cleanTable = CleanTable(data)
-    local binaryBytes = msgpack.pack(cleanTable)
+local function saveBIN(file, data)
+    local tbl = cleanTable(data)
+    local binaryBytes = msgpack.pack(tbl)
     SaveResourceFile(cache.resource, file, binaryBytes, #binaryBytes)
 end
 
@@ -32,7 +32,7 @@ function SetVehicleData(plate, data)
 end
 
 function GetVehicleData(plate)
-    return vehicles[plate]
+    return vehicles[plate] or {}
 end
 
 lib.callback.register('filo_muffler:server:SetStatebag', function(playerId, bag, key, value)
@@ -46,9 +46,9 @@ lib.callback.register('filo_muffler:server:SetStatebag', function(playerId, bag,
     return true
 end)
 
-vehicles = LoadBIN('data/vehicles.bin')
+vehicles = loadBIN('data/vehicles.bin')
 AddEventHandler("onResourceStop", function(resourceName)
     if resourceName ~= cache.resource then return end
 
-    SaveBIN('data/vehicles.bin', vehicles)
+    saveBIN('data/vehicles.bin', vehicles)
 end)
