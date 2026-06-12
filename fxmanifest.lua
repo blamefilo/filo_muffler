@@ -6,7 +6,7 @@ author "filo studios."
 discord "https://discord.gg/bErPEKvRXg"
 repository "https://github.com/blamefilo/filo_muffler"
 description "Muffler Sound Swapper"
-version "1.0.0"
+version "1.0.1"
 
 shared_scripts {
     "@ox_lib/init.lua",
