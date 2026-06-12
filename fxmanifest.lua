@@ -2,6 +2,7 @@ fx_version "cerulean"
 game "gta5"
 lua54 "yes"
 
+name "filo_muffler"
 author "filo studios."
 discord "https://discord.gg/bErPEKvRXg"
 repository "https://github.com/blamefilo/filo_muffler"
