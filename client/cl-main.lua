@@ -168,7 +168,7 @@ CreateThread(function()
 
         for _, data in pairs(vehicles) do
             local vehicle = data.vehicle
-            if vehicle and vehicle ~= 0 and DoesEntityExist(vehicle) then
+            if vehicle and vehicle ~= 0 and DoesEntityExist(vehicle) and NetworkGetEntityIsNetworked(vehicle) then
                 local plate = GetVehicleNumberPlateText(vehicle)
                 local netId = NetworkGetNetworkIdFromEntity(vehicle)
                 local mufflerSound = GetStatebag(netId, 'mufflerSound')
