@@ -15,6 +15,7 @@ shared_scripts {
 }
 
 server_scripts {
+    '@oxmysql/lib/MySQL.lua',
     'server/sv-*.lua'
 }
 
@@ -22,10 +23,7 @@ client_scripts {
     'client/cl-*.lua'
 }
 
-files {
-    'data/*',
-}
-
 dependencies {
     'community_bridge',
+    'oxmysql'
 }
